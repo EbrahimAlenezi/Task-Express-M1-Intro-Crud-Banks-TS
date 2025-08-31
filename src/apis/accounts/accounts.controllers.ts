@@ -43,9 +43,9 @@ export const deleteAccount = async (req: Request, res: Response) => {
   try {
     const { accountId } = req.params;
     if (!isValidObjectId(accountId))
-      return res.status(404).json({ message: "Not found" });
+      return res.status(404).json({ message: "nto Found" });
     const exist = await Account.findById(accountId);
-    if (!exist) return res.status(404).json({ message: "Not found" });
+    if (!exist) return res.status(404).json({ message: "Not Found" });
     await Account.deleteOne({ _id: accountId });
     res.sendStatus(204);
   } catch (err: any) {
